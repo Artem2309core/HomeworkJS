@@ -1,0 +1,27 @@
+let greeting = 'hello';
+let company = 'owu';
+let domain = 'com';
+let country = 'ua';
+let num1 = 1;
+let num2= 10;
+let num3 = -999;
+let num4 = 123;
+let pi= 3.14;
+let e= 2.7;
+let age= 16;
+let is_On= true;
+let is_Off= false;
+
+console.log(greeting);
+console.log(company);
+console.log(domain);
+console.log(country);
+console.log(num1);
+console.log(num2);
+console.log(num3);
+console.log(num4);
+console.log(pi);
+console.log(e);
+console.log(age);
+console.log(is_On);
+console.log(is_Off);
