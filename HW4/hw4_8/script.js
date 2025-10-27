@@ -1,0 +1,16 @@
+function showUsers(users) {
+    for (let user of users) {
+        document.write(`
+      <div>
+        <h3>${user.id}. ${user.name}</h3>
+        <p>Вік: ${user.age}</p>
+      </div>
+    `);
+    }
+}
+
+showUsers([
+    { id: 1, name: 'Artem', age: 22 },
+    { id: 2, name: 'Olya', age: 25 },
+    { id: 3, name: 'Max', age: 19 }
+]);
