@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class CarC {
+        constructor(model, manufacturer, year, maxSpeed, engineVolume) {
+            this.model = model;
+            this.manufacturer = manufacturer;
+            this.year = year;
+            this.maxSpeed = maxSpeed;
+            this.engineVolume = engineVolume;
+            this.driver = null;
+        }
+        drive() {
+            console.log(`їдемо зі швидкістю ${this.maxSpeed} км на годину`);
+        }
+        info() {
+            const entries = Object.entries(this)
+                .filter(([k, v]) => typeof v !== 'function')
+                .map(([k, v]) => `${k} – ${JSON.stringify(v)}`)
+                .join('\n');
+            console.log(entries);
+        }
+        increaseMaxSpeed(newSpeed) {
+            this.maxSpeed += Number(newSpeed) || 0;
+            this.year = Number() || this.year;
+        }
+        addDriver(driver) {
+            this.driver = driver;
+        }
+    }
+</script>
+
+</body>
+</html>

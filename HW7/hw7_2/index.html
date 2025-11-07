@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   let users = []
+   function filterFunction(user){
+       return user.id % 2 === 0;
+   }
+   const filterUsers = users.filter(filterFunction);
+   console.log(filterUsers);
+</script>
+
+</body>
+</html>
