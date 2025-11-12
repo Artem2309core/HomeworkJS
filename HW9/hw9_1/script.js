@@ -1,0 +1,13 @@
+const box = document.createElement('div');
+box.classList.add('wrap','collapse','alpha','beta');
+box.textContent = 'I am the original block';
+box.style.background = '#222';
+box.style.color = '#fff';
+box.style.fontSize = '20px';
+box.style.padding = '16px';
+box.style.margin = '8px 0';
+box.style.borderRadius = '10px';
+document.body.appendChild(box);
+const clone = box.cloneNode(true);
+clone.textContent = 'I am the cloned block';
+document.body.appendChild(clone);

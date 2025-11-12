@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const items = ['Main','Products','About us','Contacts'];
+    const ul = document.createElement('ul');
+    for (const text of items) {
+        const li = document.createElement('li');
+        li.textContent = text;
+        ul.appendChild(li);
+    }
+    document.body.appendChild(ul);
+</script>
+
+
+</body>
+</html>

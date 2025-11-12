@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    background:#f9f9f9;
+    padding:20px;
+}
+.course {
+    border:2px solid #e33;
+    background:#fff;
+    margin:16px 0;
+    padding:14px;
+    border-radius:10px;
+}
+.course h2 {
+    margin:0 0 8px;
+}
+.info {
+    display:flex;
+    gap:16px;
+    margin-bottom:10px;
+}
+.modules {
+    border:2px solid #06f;
+    background:#f0f6ff;
+    padding:10px;
+    border-radius:8px;
+}
+.modules li {
+    margin:4px 0;
+}

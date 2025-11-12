@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <title>Courses</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script src="arrays-1.js"></script>
+<script>
+
+    for (const course of coursesArray) {
+        const card = document.createElement('div');
+        card.className = 'course';
+
+        const h2 = document.createElement('h2');
+        h2.textContent = course.title;
+
+        const info = document.createElement('div');
+        info.className = 'info';
+        const month = document.createElement('div');
+        month.textContent = 'monthDuration: ' + course.monthDuration;
+        const hours = document.createElement('div');
+        hours.textContent = 'hourDuration: ' + course.hourDuration;
+        info.append(month, hours);
+
+        const mods = document.createElement('div');
+        mods.className = 'modules';
+        const ul = document.createElement('ul');
+        for (const m of course.modules) {
+            const li = document.createElement('li');
+            li.textContent = m;
+            ul.appendChild(li);
+        }
+        mods.appendChild(ul);
+
+        card.append(h2, info, mods);
+        document.body.appendChild(card);
+    }
+</script>
+
+</body>
+</html>
