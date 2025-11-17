@@ -1,0 +1,10 @@
+
+body { font-family: sans-serif; padding:20px; background:#f9f9f9; }
+.cart {
+    background:white;
+    padding:16px;
+    margin:16px 0;
+    border-radius:10px;
+    border:2px solid #333;
+}
+ul { margin:6px 0 0 20px; }

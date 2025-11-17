@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="kg" placeholder="Кілограми">
+<span> = </span>
+<span id="lbs">0</span> фунтів
+
+<script>
+    const kgInput = document.getElementById('kg');
+    const lbsSpan = document.getElementById('lbs');
+    const K = 2.20462;
+
+    kgInput.addEventListener('input', () => {
+        const kg = Number(kgInput.value);
+        if (!kg) {
+            lbsSpan.textContent = 0;
+            return;
+        }
+        lbsSpan.textContent = (kg * K).toFixed(2);
+    });
+</script>
+
+
+</body>
+</html>

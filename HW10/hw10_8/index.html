@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="rows" placeholder="Кількість рядків">
+<input type="number" id="cols" placeholder="Кількість ячейок">
+<input type="text" id="content" placeholder="Вміст ячейок">
+<button id="build">Побудувати</button>
+
+<div id="table-container"></div>
+
+<script>
+    const rowsInput = document.getElementById('rows');
+    const colsInput = document.getElementById('cols');
+    const contentInput = document.getElementById('content');
+    const btn = document.getElementById('build');
+    const container = document.getElementById('table-container');
+
+    btn.addEventListener('click', () => {
+        const rows = Number(rowsInput.value);
+        const cols = Number(colsInput.value);
+        const content = contentInput.value;
+
+        if (!rows || !cols) return;
+
+        const table = document.createElement('table');
+        table.border = '1';
+
+        for (let i = 0; i < rows; i++) {
+            const tr = document.createElement('tr');
+            for (let j = 0; j < cols; j++) {
+                const td = document.createElement('td');
+                td.textContent = content;
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+
+        container.innerHTML = '';
+        container.appendChild(table);
+    });
+</script>
+
+
+</body>
+</html>

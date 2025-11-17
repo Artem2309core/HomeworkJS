@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head><meta charset="UTF-8"><title>Index</title></head>
+<body>
+<h1>Index page</h1>
+<a href="sessionlist.html">Перейти до списку сесій</a>
+
+<script>
+    const key = 'sessionsList';
+    const list = JSON.parse(localStorage.getItem(key)) || [];
+
+    list.push(new Date().toLocaleString());
+    localStorage.setItem(key, JSON.stringify(list));
+</script>
+</body>
+</html>
+

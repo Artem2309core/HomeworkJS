@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head><meta charset="UTF-8"><title>Sessions</title></head>
+<body>
+<h1>Відвідування index.html</h1>
+<ul id="sessions"></ul>
+
+<script>
+    const key = 'sessionsList';
+    const list = JSON.parse(localStorage.getItem(key)) || [];
+    const ul = document.getElementById('sessions');
+
+    list.forEach(time => {
+        const li = document.createElement('li');
+        li.textContent = time;
+        ul.appendChild(li);
+    });
+</script>
+</body>
+</html>
+

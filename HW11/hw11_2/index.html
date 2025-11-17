@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipes</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>Всі рецепти</h1>
+<div id="recipes"></div>
+
+<script>
+    fetch('https://dummyjson.com/recipes')
+        .then(res => res.json())
+        .then(data => {
+            const container = document.getElementById('recipes');
+
+            data.recipes.forEach(rec => {
+                const div = document.createElement('div');
+                div.className = 'recipe';
+
+                div.innerHTML = `
+        <h2>${rec.name}</h2>
+        <p><strong>ID:</strong> ${rec.id}</p>
+        <p><strong>Difficulty:</strong> ${rec.difficulty}</p>
+        <p><strong>Prep Time:</strong> ${rec.prepTimeMinutes} min</p>
+        <p><strong>Cook Time:</strong> ${rec.cookTimeMinutes} min</p>
+        <p><strong>Servings:</strong> ${rec.servings}</p>
+        <p><strong>Cuisine:</strong> ${rec.cuisine}</p>
+        <p><strong>Calories:</strong> ${rec.caloriesPerServing}</p>
+        <h3>Ingredients:</h3>
+      `;
+
+                const ul = document.createElement('ul');
+
+                rec.ingredients.forEach(ing => {
+                    const li = document.createElement('li');
+                    li.textContent = ing;
+                    ul.appendChild(li);
+                });
+
+                div.appendChild(ul);
+                container.appendChild(div);
+            });
+        });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="list"></div>
+<button id="prev">Prev</button>
+<button id="next">Next</button>
+
+<script>
+    const data = [];
+    for (let i = 1; i <= 100; i++) {
+        data.push({ id: i, name: 'Item ' + i });
+    }
+
+    const listEl = document.getElementById('list');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+
+    const pageSize = 10;
+    let currentPage = 1;
+    const totalPages = Math.ceil(data.length / pageSize);
+
+    function renderPage(page) {
+        listEl.innerHTML = '';
+        const start = (page - 1) * pageSize;
+        const end = start + pageSize;
+        const slice = data.slice(start, end);
+
+        slice.forEach(item => {
+            const div = document.createElement('div');
+            div.textContent = `${item.id}: ${item.name}`;
+            listEl.appendChild(div);
+        });
+    }
+    prevBtn.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            renderPage(currentPage);
+        }
+    });
+    nextBtn.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            renderPage(currentPage);
+        }
+    });
+
+    renderPage(currentPage);
+</script>
+
+
+</body>
+</html>

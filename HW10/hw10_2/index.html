@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div><input type="number" id="age-input" placeholder="Ваш вік">
+    <button id="age-btn">Перевірити</button>
+    <p id="age-result"></p></div>
+
+<script>
+    const ageInput = document.getElementById('age-input');
+    const ageBtn = document.getElementById('age-btn');
+    const ageResult = document.getElementById('age-result');
+    ageBtn.addEventListener('click', () => {
+        const age = Number(ageInput.value);
+        if (!age) {
+            ageResult.textContent = 'Введіть коректний вік';
+            return;
+        }
+        if (age < 18) {
+            ageResult.textContent = 'Вам ще немає 18 ';
+        } else {
+            ageResult.textContent = 'Доступ дозволено';
+        }
+    });
+</script>
+
+</body>
+</html>

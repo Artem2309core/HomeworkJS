@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="counter"></div>
+
+<script>
+    const key = 'pageCounter';
+    let value = Number(localStorage.getItem(key)) || 0;
+    value += 1;
+    localStorage.setItem(key, String(value));
+
+    document.getElementById('counter').textContent = value;
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="user-form">
+    <input type="text" name="name" placeholder="Імʼя">
+    <input type="text" name="surname" placeholder="Прізвище">
+    <input type="number" name="age" placeholder="Вік">
+    <button type="submit">Надіслати</button>
+</form>
+<div id="user-result"></div>
+<script>
+    const form = document.getElementById('user-form');
+    const result = document.getElementById('user-result');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const user = {
+            name: form.name.value,
+            surname: form.surname.value,
+            age: Number(form.age.value)
+        };
+        result.textContent = JSON.stringify(user, null, 2);
+    });
+</script>
+
+</body>
+</html>

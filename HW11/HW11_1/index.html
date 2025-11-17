@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Carts</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>Всі корзини</h1>
+<div id="carts"></div>
+
+<script>
+    fetch('https://dummyjson.com/carts')
+        .then(res => res.json())
+        .then(data => {
+            const container = document.getElementById('carts');
+
+            data.carts.forEach(cart => {
+                const div = document.createElement('div');
+                div.className = 'cart';
+
+                div.innerHTML = `
+        <h2>Cart ID: ${cart.id}</h2>
+        <p><strong>User ID:</strong> ${cart.userId}</p>
+        <p><strong>Total:</strong> ${cart.total}</p>
+        <p><strong>Discounted Total:</strong> ${cart.discountedTotal}</p>
+        <p><strong>Total Products:</strong> ${cart.totalProducts}</p>
+        <p><strong>Total Quantity:</strong> ${cart.totalQuantity}</p>
+        <h3>Products:</h3>
+      `;
+
+                const ul = document.createElement('ul');
+
+                cart.products.forEach(prod => {
+                    const li = document.createElement('li');
+                    li.textContent = `Title: ${prod.title}, Price: ${prod.price}, Qty: ${prod.quantity}, Total: ${prod.total}`;
+                    ul.appendChild(li);
+                });
+
+                div.appendChild(ul);
+                container.appendChild(div);
+            });
+        });
+</script>
+
+</body>
+</html>
